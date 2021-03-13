@@ -9,7 +9,7 @@ public  class Validator  {
     int sum2 = 0;//intialization of variable
     int sum = 0;
 
-    public void checkPassword(String password){//checking password
+    public boolean checkPassword(String password){//checking password
         boolean lengthCheck = false;//properties for logical operations
         boolean upperCaseCheck = false;//properties for logical operations
         boolean lowerCaseCheck = false;//properties for logical operations
@@ -41,15 +41,13 @@ public  class Validator  {
             }
         }
         if(upperCaseCheck == true && lowerCaseCheck == true && digitCheck == true && lengthCheck == true && specialSymbol == true) {//logical statements for checking password
-            check = true;
+            return true;
         }
-        if(check == true) {//logical statements for checking password
-            System.out.println("Your password : " + password + " was settled successfully!");
-            sum++;
-        }
+
         else {//logical statements for checking password
             System.out.println("Invalid password!"+"\n"+" Password must to contain at least 1 uppercase letter, 1 lowercase letter, 1 digit,"+"\n"+" 1 special symbol(@,$,!,^) and length more or equal to 8.\n"+"Try again : ");
             password = "";
+            return false;
         }
     }
     public  boolean checkPasswordLogIn(String password,String realPassword){

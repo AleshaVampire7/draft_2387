@@ -9,7 +9,7 @@ public class DBManager implements IDBManager {
 
         try {
             Class.forName("org.postgresql.Driver");
-            Connection connection= DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","KAD2020a");
+            Connection connection= DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","2002");
             return  connection;
         }catch (Exception e){
             System.out.println("You have got an error with the connection!");
